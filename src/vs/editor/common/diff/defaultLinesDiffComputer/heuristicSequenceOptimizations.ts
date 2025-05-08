@@ -9,7 +9,10 @@ import { ISequence, OffsetPair, SequenceDiff } from './algorithms/diffAlgorithm.
 import { LineSequence } from './lineSequence.js';
 import { LinesSliceCharSequence } from './linesSliceCharSequence.js';
 
-export function optimizeSequenceDiffs(sequence1: ISequence, sequence2: ISequence, sequenceDiffs: SequenceDiff[]): SequenceDiff[] {
+export function optimizeSequenceDiffs(sequence1: ISequence, sequence2: ISequence, sequenceDiffs: SequenceDiff[], timeout: ITimeout): SequenceDiff[] {
+	if (!timeout.isValid()) {
+		return sequenceDiffs;
+	}
 	let result = sequenceDiffs;
 	result = joinSequenceDiffsByShifting(sequence1, sequence2, result);
 	// Sometimes, calling this function twice improves the result.

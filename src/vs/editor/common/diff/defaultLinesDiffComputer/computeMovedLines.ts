@@ -22,6 +22,10 @@ export function computeMovedLines(
 	hashedModifiedLines: number[],
 	timeout: ITimeout
 ): LineRangeMapping[] {
+	if (!timeout.isValid()) {
+		return [];
+	}
+
 	let { moves, excludedChanges } = computeMovesFromSimpleDeletionsToSimpleInsertions(changes, originalLines, modifiedLines, timeout);
 
 	if (!timeout.isValid()) { return []; }

@@ -47,6 +47,10 @@ export class DefaultLinesDiffComputer implements ILinesDiffComputer {
 		const timeout = options.maxComputationTimeMs === 0 ? InfiniteTimeout.instance : new DateTimeout(options.maxComputationTimeMs);
 		const considerWhitespaceChanges = !options.ignoreTrimWhitespace;
 
+		if (!timeout.isValid()) {
+			return new LinesDiff([], [], true);
+		}
+
 		const perfectHashes = new Map<string, number>();
 		function getOrCreateHash(text: string): number {
 			let hash = perfectHashes.get(text);

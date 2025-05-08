@@ -8,5 +8,3 @@ import { QuickEdit } from './QuickEdit.js'
 
 
 export const mountCtrlK = mountFnGenerator(QuickEdit)
-
-

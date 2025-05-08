@@ -72,10 +72,10 @@ export const defaultModelsOfProvider = {
 		'gpt-4.1-nano',
 		'o3',
 		'o4-mini',
-		// 'o1',
-		// 'o1-mini',
-		// 'gpt-4o',
-		// 'gpt-4o-mini',
+		 'o1',
+		 'o1-mini',
+		'gpt-4o',
+		 'gpt-4o-mini',
 	],
 	anthropic: [ // https://docs.anthropic.com/en/docs/about-claude/models
 		'claude-3-7-sonnet-latest',
@@ -93,6 +93,36 @@ export const defaultModelsOfProvider = {
 		'gemini-2.0-flash',
 		'gemini-2.0-flash-lite',
 		'gemini-2.5-pro-preview-05-06',
+		'gemini-1.5-flash-001',
+
+'gemini-1.5-flash-002',
+
+'gemini-1.5-flash-8b-001',
+
+'gemini-1.5-pro-001',
+
+'gemini-1.5-pro-002',
+
+'gemini-1.5-flash-8b-exp-0827',
+
+'gemini-1.5-flash-8b-exp-0924',
+
+'gemini-1.5-pro-exp-0801',
+
+'gemini-1.5-pro-exp-0827',
+
+'gemini-2.0-flash-001',
+
+'gemini-2.0-flash-exp',
+
+'gemini-2.0-flash-thinking-exp-01-21',
+
+'gemini-2.0-flash-lite-preview-02-05',
+
+'gemini-2.0-pro-exp-02-05',
+
+'gemini-2.5-flash',
+		
 	],
 	deepseek: [ // https://api-docs.deepseek.com/quick_start/pricing
 		'deepseek-chat',
@@ -115,10 +145,10 @@ export const defaultModelsOfProvider = {
 		// 'google/gemini-2.5-pro-preview-03-25',
 		// 'mistralai/codestral-2501',
 		// 'qwen/qwen-2.5-coder-32b-instruct',
-		// 'mistralai/mistral-small-3.1-24b-instruct:free',
-		// 'google/gemini-2.0-flash-lite-preview-02-05:free',
-		// 'google/gemini-2.0-pro-exp-02-05:free',
-		// 'google/gemini-2.0-flash-exp:free',
+		 'mistralai/mistral-small-3.1-24b-instruct:free',
+		 'google/gemini-2.0-flash-lite-preview-02-05:free',
+		 'google/gemini-2.0-pro-exp-02-05:free',
+		 'google/gemini-2.0-flash-exp:free',
 	],
 	groq: [ // https://console.groq.com/docs/models
 		'qwen-qwq-32b',

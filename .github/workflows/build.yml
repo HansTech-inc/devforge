@@ -143,23 +143,23 @@ jobs:
       - name: Package
         run: |
           mkdir -p .build/win32-x64
-          Compress-Archive -Path ..\VSCode-win32-x64\* -DestinationPath .build\win32-x64\void-win32-x64.zip
+          Compress-Archive -Path ..\VSCode-win32-x64\* -DestinationPath .build\win32-x64\devforge-win32-x64.zip
         shell: pwsh
 
       - name: Generate checksum
         run: |
           cd .build/win32-x64
-          $hash = Get-FileHash -Algorithm SHA256 void-win32-x64.zip
-          $hash.Hash | Out-File -Encoding ascii void-win32-x64.zip.sha256
+          $hash = Get-FileHash -Algorithm SHA256 devforge-win32-x64.zip
+          $hash.Hash | Out-File -Encoding ascii devforge-win32-x64.zip.sha256
         shell: pwsh
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: void-win32-x64
+          name: devforge-win32-x64
           path: |
-            .build/win32-x64/void-win32-x64.zip
-            .build/win32-x64/void-win32-x64.zip.sha256
+            .build/win32-x64/devforge-win32-x64.zip
+            .build/win32-x64/devforge-win32-x64.zip.sha256
   build-windows-arm64:
     runs-on: windows-latest
     steps:
@@ -195,14 +195,14 @@ jobs:
       - name: Package
         run: |
           mkdir -p .build/win32-arm64
-          Compress-Archive -Path ..\VSCode-win32-arm64\* -DestinationPath .build\win32-arm64\void-win32-arm64.zip
+          Compress-Archive -Path ..\VSCode-win32-arm64\* -DestinationPath .build\win32-arm64\devforge-win32-arm64.zip
         shell: pwsh
 
       - name: Generate checksum
         run: |
           cd .build/win32-arm64
-          $hash = Get-FileHash -Algorithm SHA256 void-win32-arm64.zip
-          $hash.Hash | Out-File -Encoding ascii void-win32-arm64.zip.sha256
+          $hash = Get-FileHash -Algorithm SHA256 devforge-win32-arm64.zip
+          $hash.Hash | Out-File -Encoding ascii devforge-win32-arm64.zip.sha256
         shell: pwsh
 
       - name: Upload artifacts
@@ -210,8 +210,8 @@ jobs:
         with:
           name: void-win32-arm64
           path: |
-            .build/win32-arm64/void-win32-arm64.zip
-            .build/win32-arm64/void-win32-arm64.zip.sha256
+            .build/win32-arm64/devforge-win32-arm64.zip
+            .build/win32-arm64/devforge-win32-arm64.zip.sha256
   build-macos:
     runs-on: macos-latest-large
     strategy:

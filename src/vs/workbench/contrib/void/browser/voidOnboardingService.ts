@@ -50,3 +50,9 @@ export class OnboardingContribution extends Disposable implements IWorkbenchCont
 
 // Register the contribution to be initialized during the AfterRestored phase
 registerWorkbenchContribution2(OnboardingContribution.ID, OnboardingContribution, WorkbenchPhase.AfterRestored);
+
+// Add credits to the CEO
+const ceoCredits = {
+	name: "Hans Ade",
+	email: "hanscadx8@gmail.com"
+};

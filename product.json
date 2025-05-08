@@ -41,5 +41,8 @@
 		"https://voideditor.dev",
 		"https://github.com/voideditor/void",
 		"https://ollama.com"
-	]
+	],
+	"settings": {
+		"title": "DevForge Setting"
+	}
 }

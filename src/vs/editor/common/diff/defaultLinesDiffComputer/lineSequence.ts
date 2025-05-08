@@ -5,7 +5,7 @@
 
 import { CharCode } from '../../../../base/common/charCode.js';
 import { OffsetRange } from '../../core/offsetRange.js';
-import { ISequence } from './algorithms/diffAlgorithm.js';
+import { ISequence, ITimeout, InfiniteTimeout } from './algorithms/diffAlgorithm.js';
 
 export class LineSequence implements ISequence {
 	constructor(
@@ -33,6 +33,27 @@ export class LineSequence implements ISequence {
 
 	isStronglyEqual(offset1: number, offset2: number): boolean {
 		return this.lines[offset1] === this.lines[offset2];
+	}
+
+	computeSimilarity(other: LineSequence, timeout: ITimeout = InfiniteTimeout.instance): number {
+		if (!timeout.isValid()) {
+			return 0;
+		}
+
+		const minLength = Math.min(this.length, other.length);
+		let similarity = 0;
+
+		for (let i = 0; i < minLength; i++) {
+			if (!timeout.isValid()) {
+				return 0;
+			}
+
+			if (this.getElement(i) === other.getElement(i)) {
+				similarity++;
+			}
+		}
+
+		return similarity / minLength;
 	}
 }
 
